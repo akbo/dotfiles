@@ -13,3 +13,5 @@ export COLORTERM=truecolor
 
 alias hx=helix
 alias lg=lazygit
+
+export PATH="/home/arch/.local/bin:$PATH"
