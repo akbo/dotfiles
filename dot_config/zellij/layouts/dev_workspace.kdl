@@ -1,0 +1,32 @@
+layout {
+    default_tab_template {
+      pane size=1 borderless=true {
+          plugin location="zellij:tab-bar"
+      }
+      children
+      pane size=1 borderless=true {
+          plugin location="zellij:status-bar"
+      }
+  }
+  tab name="edit" {
+    pane command="bash" close_on_exit=true {
+      args "-ci" "source .venv/bin/activate && hx; exec bash -i"
+    }
+  }
+  tab name="run" {
+    pane command="bash" close_on_exit=true {
+       args "-ci" "source .venv/bin/activate; exec bash -i"
+    }
+  }
+  tab name="git" {
+    pane command="bash" close_on_exit=true {
+      args "-ci" "source .venv/bin/activate && lg; exec bash -i"
+    }
+  }
+  tab name="claude" {
+    pane command="bash" close_on_exit=true {
+      args "-ci" "source .venv/bin/activate && claude; exec bash -i"
+    }
+  }
+}
+
